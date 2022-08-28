@@ -13,7 +13,7 @@ public class BilibiliDanmakuReference {
     private static final String MOD_VERSION_TYPE = VersionParser.getVersionType(MOD_VERSION);
 
     //#if MC > 11802
-    private static final String CURRENT_MOD_ID = String.format("%s-1_19", MOD_ID);
+    private static final String CURRENT_MOD_ID = String.format("%s-1_19_2", MOD_ID);
     //#elseif MC > 11701
     //$$ private static final String CURRENT_MOD_ID = String.format("%s-1_18_2", MOD_ID);
     //#elseif MC > 11605
