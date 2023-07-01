@@ -15,7 +15,6 @@ import top.hendrixshen.bilibilidanmaku.util.StringUtil;
 import top.hendrixshen.bilibilidanmaku.util.Zlib;
 import top.hendrixshen.bilibilidanmaku.util.websocket.WebSocketClient;
 import top.hendrixshen.bilibilidanmaku.util.websocket.WebSocketManager;
-import top.hendrixshen.magiclib.compat.minecraft.network.chat.ComponentCompatApi;
 
 import java.io.IOException;
 import java.net.URL;

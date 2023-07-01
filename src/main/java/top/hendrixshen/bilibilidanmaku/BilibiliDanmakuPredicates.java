@@ -1,13 +1,13 @@
 package top.hendrixshen.bilibilidanmaku;
 
 import top.hendrixshen.bilibilidanmaku.config.Configs;
-import top.hendrixshen.magiclib.config.Option;
-import top.hendrixshen.magiclib.dependency.annotation.OptionDependencyPredicate;
+import top.hendrixshen.magiclib.dependency.api.ConfigDependencyPredicate;
+import top.hendrixshen.magiclib.malilib.impl.ConfigOption;
 
 public class BilibiliDanmakuPredicates {
-    public static class DebugOptionPredicate implements OptionDependencyPredicate {
+    public static class DebugOptionPredicate implements ConfigDependencyPredicate {
         @Override
-        public boolean test(Option option) {
+        public boolean isSatisfied(ConfigOption option) {
             return Configs.debugMode;
         }
     }

@@ -3,12 +3,16 @@ package top.hendrixshen.bilibilidanmaku;
 import net.fabricmc.loader.api.FabricLoader;
 import top.hendrixshen.bilibilidanmaku.config.ConfigHandler;
 import top.hendrixshen.bilibilidanmaku.util.VersionParser;
-import top.hendrixshen.magiclib.config.ConfigManager;
+import top.hendrixshen.magiclib.malilib.impl.ConfigManager;
 
 public class BilibiliDanmakuReference {
     private static final String MOD_ID = "bilibili-danmaku";
-    //#if MC > 11802
-    private static final String CURRENT_MOD_ID = String.format("%s-1_19_2", MOD_ID);
+    //#if MC > 11904
+    private static final String CURRENT_MOD_ID = String.format("%s-1_20_1", MOD_ID);
+    //#elseif MC > 11902
+    //$$ private static final String CURRENT_MOD_ID = String.format("%s-1_19_4", MOD_ID);
+    //#elseif MC > 11802
+    //$$ private static final String CURRENT_MOD_ID = String.format("%s-1_19_2", MOD_ID);
     //#elseif MC > 11701
     //$$ private static final String CURRENT_MOD_ID = String.format("%s-1_18_2", MOD_ID);
     //#elseif MC > 11605

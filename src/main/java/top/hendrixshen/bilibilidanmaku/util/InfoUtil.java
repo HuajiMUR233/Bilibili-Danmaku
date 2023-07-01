@@ -3,7 +3,7 @@ package top.hendrixshen.bilibilidanmaku.util;
 import net.minecraft.client.Minecraft;
 import net.minecraft.network.chat.Component;
 import top.hendrixshen.bilibilidanmaku.BilibiliDanmaku;
-import top.hendrixshen.magiclib.compat.minecraft.network.chat.ComponentCompatApi;
+import top.hendrixshen.magiclib.compat.minecraft.api.network.chat.ComponentCompatApi;
 
 public class InfoUtil {
     private final static Minecraft mc = BilibiliDanmaku.getMinecraftClient();

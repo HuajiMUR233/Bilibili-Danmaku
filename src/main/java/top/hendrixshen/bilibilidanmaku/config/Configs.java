@@ -4,11 +4,11 @@ import com.google.common.collect.Lists;
 import fi.dy.masa.malilib.config.options.ConfigHotkey;
 import top.hendrixshen.bilibilidanmaku.BilibiliDanmakuPredicates;
 import top.hendrixshen.bilibilidanmaku.event.CallBacks;
-import top.hendrixshen.magiclib.config.ConfigManager;
-import top.hendrixshen.magiclib.config.annotation.Config;
-import top.hendrixshen.magiclib.config.annotation.Hotkey;
-import top.hendrixshen.magiclib.config.annotation.Numeric;
-import top.hendrixshen.magiclib.dependency.Predicates;
+import top.hendrixshen.magiclib.malilib.impl.ConfigManager;
+import top.hendrixshen.magiclib.malilib.api.annotation.Config;
+import top.hendrixshen.magiclib.malilib.api.annotation.Hotkey;
+import top.hendrixshen.magiclib.malilib.api.annotation.Numeric;
+import top.hendrixshen.magiclib.dependency.impl.ConfigDependencyPredicates;
 
 import java.util.ArrayList;
 
@@ -56,16 +56,16 @@ public class Configs {
     @Config(category = ConfigCategory.TOGGLE_CHAT)
     public static boolean chatWelcomeEnable = true;
 
-    @Config(category = ConfigCategory.TOGGLE_CHAT, predicate = Predicates.DevOptionPredicate.class)
+    @Config(category = ConfigCategory.TOGGLE_CHAT, predicate = ConfigDependencyPredicates.DevConfigPredicate.class)
     public static boolean chatWelcomeGuardEnable = false;
 
-    @Config(category = ConfigCategory.TOGGLE_CHAT, predicate = Predicates.DevOptionPredicate.class)
+    @Config(category = ConfigCategory.TOGGLE_CHAT, predicate = ConfigDependencyPredicates.DevConfigPredicate.class)
     public static boolean chatWelcomeGuardLv1Enable = false;
 
-    @Config(category = ConfigCategory.TOGGLE_CHAT, predicate = Predicates.DevOptionPredicate.class)
+    @Config(category = ConfigCategory.TOGGLE_CHAT, predicate = ConfigDependencyPredicates.DevConfigPredicate.class)
     public static boolean chatWelcomeGuardLv2Enable = false;
 
-    @Config(category = ConfigCategory.TOGGLE_CHAT, predicate = Predicates.DevOptionPredicate.class)
+    @Config(category = ConfigCategory.TOGGLE_CHAT, predicate = ConfigDependencyPredicates.DevConfigPredicate.class)
     public static boolean chatWelcomeGuardLv3Enable = false;
 
     @Config(category = ConfigCategory.TOGGLE_CHAT)
@@ -96,13 +96,13 @@ public class Configs {
     @Config(category = ConfigCategory.FORMAT_CHAT)
     public static String formatChatSuperChat = "&4%{user} > %{msg} [¥%{price}]";
 
-    @Config(category = ConfigCategory.FORMAT_CHAT, predicate = Predicates.DevOptionPredicate.class)
+    @Config(category = ConfigCategory.FORMAT_CHAT, predicate = ConfigDependencyPredicates.DevConfigPredicate.class)
     public static String formatChatWelcomeGuardLv1 = "&4欢迎总督 %{user} 进入直播间";
 
-    @Config(category = ConfigCategory.FORMAT_CHAT, predicate = Predicates.DevOptionPredicate.class)
+    @Config(category = ConfigCategory.FORMAT_CHAT, predicate = ConfigDependencyPredicates.DevConfigPredicate.class)
     public static String formatChatWelcomeGuardLv2 = "&6欢迎提督 %{user} 进入直播间";
 
-    @Config(category = ConfigCategory.FORMAT_CHAT, predicate = Predicates.DevOptionPredicate.class)
+    @Config(category = ConfigCategory.FORMAT_CHAT, predicate = ConfigDependencyPredicates.DevConfigPredicate.class)
     public static String formatChatWelcomeGuardLv3 = "&3欢迎舰长 %{user} 进入直播间";
 
     @Config(category = ConfigCategory.FORMAT_CHAT)

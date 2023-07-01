@@ -6,8 +6,8 @@ apply(plugin: "com.replaymod.preprocess")
 int mcVersion = 1
 
 preprocess {
-    mcVersion = vars.get()["MC"]
-    tabIndentation = false
+    mcVersion = vars.get().get("MC")
+    tabIndentation.set(false)
 }
 
 repositories {
@@ -20,7 +20,7 @@ repositories {
     }
 
     maven {
-        url("https://maven.hendrixshen.top")
+        url("https://masa.dy.fi/maven")
     }
 
     mavenCentral()
@@ -31,9 +31,7 @@ dependencies {
     minecraft("com.mojang:minecraft:${project.minecraft_version}")
     mappings(loom.officialMojangMappings())
 
-    modImplementation("top.hendrixshen:magiclib-${project.minecraft_version.replace(".", "_")}:${project.magiclib_version}") {
-        //If you want to use runClient task, you should remove this exclude setting.
-        //exclude(group: "net.fabricmc.fabric-api", module: "fabric-api")
+    modImplementation("top.hendrixshen.magiclib:magiclib-${project.minecraft_version.replace(".", "_")}:${project.magiclib_version}") {
     }
     if (mcVersion >= 11900) {
         implementation("io.netty:netty-codec-http:${project.netty_codec_http_version}")
@@ -73,16 +71,16 @@ loom {
         if (!new File("${projectDir}/run/client/options.txt").exists()) {
             new File("${projectDir}/run/client").mkdirs()
             BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter("${projectDir}/run/client/options.txt"))
-            bufferedWriter.write("autoJump:false\n")
-            bufferedWriter.write("enableVsync:false\n")
-            bufferedWriter.write("forceUnicodeFont:true\n")
-            bufferedWriter.write("fov:1.0\n")
-            bufferedWriter.write("gamma:16.0\n")
-            bufferedWriter.write("guiScale:2\n")
-            bufferedWriter.write("lang:zh_CN\n")
-            bufferedWriter.write("maxFps:260\n")
-            bufferedWriter.write("renderDistance:10\n")
-            bufferedWriter.write("soundCategory_master:0.0")
+            bufferedWriter.writeLine("autoJump:false")
+            bufferedWriter.writeLine("enableVsync:false")
+            bufferedWriter.writeLine("forceUnicodeFont:true")
+            bufferedWriter.writeLine("fov:1.0")
+            bufferedWriter.writeLine("gamma:16.0")
+            bufferedWriter.writeLine("guiScale:2")
+            bufferedWriter.writeLine("lang:zh_CN")
+            bufferedWriter.writeLine("maxFps:260")
+            bufferedWriter.writeLine("renderDistance:10")
+            bufferedWriter.writeLine("soundCategory_master:0.0")
             bufferedWriter.close()
         }
     }
@@ -93,7 +91,7 @@ loom {
         if (!new File("${projectDir}/run/server/eula.txt").exists()) {
             new File("${projectDir}/run/server").mkdirs()
             BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter("${projectDir}/run/server/eula.txt"))
-            bufferedWriter.write("eula=true")
+            bufferedWriter.writeLine("eula=true")
             bufferedWriter.close()
         }
     }
